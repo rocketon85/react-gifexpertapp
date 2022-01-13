@@ -1,11 +1,12 @@
+import {shallow} from 'enzyme';
 import React from 'react';
-import { shallow } from "enzyme"
-import { GifGridItem } from "../../components/GifGridItem"
 
-describe('pruebas GrifGridItem', () => {
+import {GifGridItem} from '../../components/GifGridItem';
 
-    test('debe mostrar el componente correctamente ', () => {
-        const wrapper = shallow(<GifGridItem />);
+describe('GifGridItem', () => {
+    
+    test('should match snaptshot', () => {
+        const wrapper = shallow(<GifGridItem/>);
 
         expect(wrapper).toMatchSnapshot();
     })
