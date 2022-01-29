@@ -10,3 +10,18 @@ exports[`GifGridItem should match snaptshot 1`] = `
   </p>
 </div>
 `;
+
+exports[`Pruebas en <GifGridItem /> debe de mostrar el componente correctamente 1`] = `
+<div
+  className="card animate__shakeX"
+>
+  <img
+    alt="Un título"
+    src="https://localhost/algo.jpg"
+  />
+  <p>
+    Un título
+            
+  </p>
+</div>
+`;
