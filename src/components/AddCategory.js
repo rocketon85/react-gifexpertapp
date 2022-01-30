@@ -12,9 +12,13 @@ export const AddCategory = ({setCategories}) => {
     const handlerSubmit = (e) => {
         e.preventDefault();
 
-        if (setCategories(inputValue)) { //setCategories(cats => [...cats, inputValue] );
+        if(inputValue != undefined && inputValue.trim().length > 0){
+            
+            setCategories(inputValue);
             setInputValue('');
+            
         }
+        
     }
 
     return (

@@ -8,8 +8,13 @@ import {AddCategory} from '../../components/AddCategory';
 
 describe('test of <AddCategory />', () => {
   
-    const setCategories = jest.fn;
-    const wrapper = shallow( <AddCategory setCategories={ setCategories }/>)  
+    const setCategories = jest.fn();
+    let wrapper = shallow( <AddCategory setCategories={ setCategories }/>);
+
+    beforeEach(() => {
+        jest.clearAllMocks();
+        wrapper = shallow( <AddCategory setCategories={ setCategories }/>);
+    });
 
     test('should display the component correctly', () => {
         expect(wrapper).toMatchSnapshot();
@@ -31,6 +36,20 @@ describe('test of <AddCategory />', () => {
         wrapper.find('form').simulate('submit', {preventDefault() {}});
 
         expect(setCategories).not.toHaveBeenCalled();
+    });
+    
+    test('should change input and do post on submit', () => {
+        const val = 'Dragon Ball';
+
+        wrapper.find('input').simulate('change', {target: {value: val}});
+        wrapper.find('form').simulate('submit', {preventDefault() {}});
+
+        //wrapper.find('input').simulate('change', {target: {value: ''}});
+
+        expect(setCategories).toHaveBeenCalledTimes(1);
+        //se espera que la funcion sea llamada con una funcion como parametro    expect.any(Function)
+        expect(setCategories).toHaveBeenCalledWith( expect.any(String)); 
+        expect(wrapper.find('p').text().trim()).toBe('');
     });
     
   
