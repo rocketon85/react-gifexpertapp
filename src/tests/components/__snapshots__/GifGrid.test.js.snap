@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`test of GifGrid should match with snapshot 1`] = `
+<Fragment>
+  <h3>
+    Dragon Ball
+  </h3>
+  <p>
+    Loading
+  </p>
+  <div
+    className="card-grid animate__animated animate__bounce"
+  />
+</Fragment>
+`;
+
+exports[`test of GifGrid should render with data 1`] = `
+<Fragment>
+  <h3>
+    Dragon Ball
+  </h3>
+  <div
+    className="card-grid animate__animated animate__bounce"
+  >
+    <GifGridItem
+      id={1}
+      key="1"
+      title="test"
+      url="http://"
+    />
+  </div>
+</Fragment>
+`;
